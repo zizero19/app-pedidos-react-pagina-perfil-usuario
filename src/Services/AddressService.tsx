@@ -1,4 +1,5 @@
 import axios, {AxiosResponse} from 'axios';
+import Address from '../Models/Address';
 
 const BASE_URL = 'http://localhost:8080/endereco';
 

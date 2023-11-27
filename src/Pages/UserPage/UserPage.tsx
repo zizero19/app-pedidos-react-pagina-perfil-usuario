@@ -1,10 +1,20 @@
+import UserData from '../../Components/UserData/UserData';
 import './UserPage.css'
 
 const Teste = () => {
     return (
     <>
     <body>
-        <h1>Teste</h1>
+        <div className="container">
+            <header>
+                <h1>Perfil do Usuario</h1>
+            </header>
+
+            <div className="userDisplay">
+                <UserData></UserData>
+
+            </div>
+        </div>
     </body>
     </>
     )
