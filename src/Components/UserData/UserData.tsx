@@ -5,30 +5,30 @@ import Address from '../../Models/Address';
     function UserData() {
         const [usuario, setUsuario] = useState<Usuario>({
             id: 0,
-            nome: 'teste',
-            usuarioNome: 'teste',
-            cpf: 'teste',
-            email: 'teste',
-            senha: 'teste',
+            nome: '',
+            usuarioNome: '',
+            cpf: '',
+            email: '',
+            senha: '',
             address: new Object,
         });
 
-        //const carregaDados = (event: React.ChangeEvent<HTMLInputElement>) => {
-            //const { name, value } = event.target;
-            //setUsuario({
-                //...usuario,
-                //[name]: value
-            //});
-        //};
+        const carregaDados = (event: React.ChangeEvent<HTMLInputElement>) => {
+            const { name, value } = event.target;
+            setUsuario({
+                ...usuario,
+                [name]: value
+            });
+        };
     
         return (
             <>
             <div> 
-                <input className="nomeUsuario" value = {usuario.usuarioNome}/><p></p>
-                <input className="nome" value={usuario.nome}/><p></p>
-                <input className="cpf" value={usuario.cpf}/><p></p>
-                <input className="email" value={usuario.email}/><p></p>
-                <input className="senha" value={usuario.senha}/><p></p>
+                <input className="nomeUsuario" onLoad={carregaDados} value = {usuario.usuarioNome}/><p></p>
+                <input className="nome" onLoad={carregaDados} value={usuario.nome}/><p></p>
+                <input className="cpf" onLoad={carregaDados} value={usuario.cpf}/><p></p>
+                <input className="email" onLoad={carregaDados} value={usuario.email}/><p></p>
+                <input className="senha" onLoad={carregaDados} value={usuario.senha}/><p></p>
             </div>
             </>
         );
